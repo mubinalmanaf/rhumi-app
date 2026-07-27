@@ -19,7 +19,7 @@
  */
 export const WAITLIST = {
   endpoint:
-    "https://script.google.com/macros/s/AKfycbyP3G6exQqtZ4JGx5zW20jKOOnR6iskcbJFxUQO7vGYCqtn8I5uN5ZVZJsQTKEmgW9n/exec",
+    "https://script.google.com/macros/s/AKfycbxOaukYBR7iWyO4ZSuwyxqivIksOp1AJf94qqlV5FDp8fcBUTCJYSjX0lrDTYOLPNtg1Q/exec",
   source: "rhumi.app",
 };
 

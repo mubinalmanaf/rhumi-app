@@ -37,27 +37,17 @@ export default function WaitlistForm() {
 
     try {
       if (isWaitlistConfigured()) {
-        // FormSubmit AJAX endpoint — JSON in, JSON out, CORS-enabled.
-        const res = await fetch(WAITLIST.endpoint, {
+        // Google Apps Script Web App. text/plain avoids a CORS preflight;
+        // no-cors delivers the POST (Apps Script can't return CORS headers),
+        // so the response is opaque and completion is treated as success.
+        await fetch(WAITLIST.endpoint, {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify({
-            email: value,
-            _subject: WAITLIST.subject,
-            _template: "table",
-            _captcha: "false",
-            _honey: company, // honeypot; FormSubmit drops the submission if filled
-          }),
+          mode: "no-cors",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify({ email: value, source: WAITLIST.source }),
         });
-        const data = await res.json().catch(() => ({}));
-        if (!res.ok || (data.success && data.success !== "true")) {
-          throw new Error("submit failed");
-        }
       }
-      // Unconfigured = stub mode: validate + acknowledge, send nowhere.
+      // Unconfigured = stub mode: validate + acknowledge, store nowhere.
       setStatus("success");
     } catch {
       setStatus("error");

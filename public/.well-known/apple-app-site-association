@@ -2,7 +2,7 @@
   "applinks": {
     "details": [
       {
-        "appIDs": ["REPLACE_TEAMID.app.rhumi.mobile"],
+        "appIDs": ["UJF5S2V4N9.app.rhumi.mobile"],
         "components": [
           { "/": "/*" }
         ]
@@ -10,6 +10,6 @@
     ]
   },
   "webcredentials": {
-    "apps": ["REPLACE_TEAMID.app.rhumi.mobile"]
+    "apps": ["UJF5S2V4N9.app.rhumi.mobile"]
   }
 }

@@ -1,20 +1,22 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Lora, Figtree } from "next/font/google";
 import "./globals.css";
 import SkyBackground from "@/components/SkyBackground";
 
-const serif = Fraunces({
+// Match the app: Lora (serif — verses/display), Figtree (sans — UI/body).
+const serif = Lora({
   subsets: ["latin"],
   variable: "--font-serif",
   display: "swap",
-  weight: ["300", "400", "500"],
+  weight: ["400", "500"],
   style: ["normal", "italic"],
 });
 
-const sans = Inter({
+const sans = Figtree({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
+  weight: ["400", "500", "600"],
 });
 
 const SITE_URL = "https://rhumi.app";
@@ -56,7 +58,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0B0B10",
+  themeColor: "#1B1826",
   colorScheme: "dark",
 };
 

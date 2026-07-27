@@ -22,7 +22,7 @@ export default function DeviceMockup({ children, className = "" }: Props) {
         className="absolute -inset-10 -z-10 rounded-[60px] opacity-70 blur-3xl"
         style={{
           background:
-            "radial-gradient(50% 50% at 50% 40%, rgba(232,178,125,0.28), transparent 70%)",
+            "radial-gradient(50% 50% at 50% 40%, rgba(233,182,94,0.30), transparent 70%)",
         }}
       />
 

@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --ink: #0b0b10;
-  --bone: #f4efe6;
+  --ink: #1b1826; /* night indigo — app bgBase (dark) */
+  --bone: #ece6dd; /* app textPrimary (dark) */
+  --gold: #e9b65e; /* app accent (dark) */
   color-scheme: dark;
 }
 
@@ -24,35 +25,36 @@ body {
   background-color: var(--ink);
   color: var(--bone);
   font-family: var(--font-sans), system-ui, sans-serif;
-  /* The sky is a fixed layer behind everything; body stays transparent. */
+  /* The moonlit scene is a fixed layer behind everything; body stays transparent. */
   overflow-x: hidden;
 }
 
 ::selection {
-  background: rgba(232, 178, 125, 0.28); /* dawn amber */
+  background: rgba(233, 182, 94, 0.28); /* gold */
   color: #fff;
 }
 
-/* Focus visibility — calm but unmistakable */
+/* Focus visibility — gold, calm but unmistakable */
 :focus-visible {
-  outline: 2px solid rgba(232, 178, 125, 0.8);
+  outline: 2px solid rgba(233, 182, 94, 0.85);
   outline-offset: 3px;
   border-radius: 4px;
 }
 
 @layer components {
+  /* App "label" variant: caps, wide tracking, Figtree SemiBold, muted tone */
   .eyebrow {
-    @apply text-xs uppercase tracking-eyebrow text-bone-faint font-sans;
+    @apply text-xs uppercase tracking-eyebrow text-bone-faint font-sans font-semibold;
   }
 
-  /* Fine film grain to keep the gradients from banding and add quiet texture */
+  /* Fine grain to keep gradients from banding and add quiet texture */
   .grain::after {
     content: "";
     position: fixed;
     inset: 0;
     pointer-events: none;
     z-index: 1;
-    opacity: 0.05;
+    opacity: 0.04;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 }
@@ -63,7 +65,7 @@ body {
   background: linear-gradient(
     to right,
     transparent,
-    rgba(244, 239, 230, 0.14),
+    rgba(236, 230, 221, 0.16),
     transparent
   );
 }

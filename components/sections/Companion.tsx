@@ -55,7 +55,7 @@ export default function Companion() {
             className="h-full rounded-3xl border border-dawn-amber/25 p-7"
             style={{
               background:
-                "linear-gradient(180deg, rgba(232,178,125,0.10), rgba(176,106,122,0.06))",
+                "linear-gradient(180deg, rgba(233,182,94,0.12), rgba(127,168,142,0.06))",
             }}
           >
             <p className="text-xs uppercase tracking-eyebrow text-dawn-amber">

@@ -1,37 +1,46 @@
 /**
- * Faithful mockup of Rhumi's daily verse + reflection card.
- * Verse in literary serif; reflection in the app's editorial "companion" voice
- * (never scholarship). Slot-ready to swap for a real screenshot later.
+ * Faithful mockup of Rhumi's daily ReflectionCard (light "meadow" theme).
+ * Real seeded content: verse 65:3 + its reflection/prompt from the app's
+ * content library. Glyphs + type match src/components/ReflectionCard.tsx.
  */
 export default function VerseCard() {
   return (
-    <div className="flex h-full flex-col bg-[#12101A] px-6 pb-8 pt-14 text-bone">
-      <div className="flex items-center justify-between">
-        <span className="text-[11px] uppercase tracking-[0.22em] text-bone-faint">
-          This morning
+    <div className="flex h-full flex-col bg-app-cream px-5 pb-6 pt-14 text-app-plum">
+      <div className="flex-1 rounded-[22px] bg-app-card px-5 py-6 shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
+        <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-app-plumsoft">
+          Today&apos;s reflection
         </span>
-        <span className="text-[11px] text-bone-faint">Sūrah 94 · 5–6</span>
-      </div>
 
-      <div className="mt-10 flex-1">
-        <p className="font-serif text-[26px] font-light leading-[1.42] text-bone">
-          “For indeed, with hardship will come ease. Indeed, with hardship will
-          come ease.”
+        <p className="mt-4 font-serif text-[19px] leading-[1.5] text-app-plum">
+          &ldquo;And whoever relies upon Allah - then He is sufficient for
+          him.&rdquo;
         </p>
 
-        <div className="mt-7 h-px w-10 bg-bone/25" />
+        <div className="mt-3 flex items-center gap-2 text-[11px]">
+          <span className="text-app-plumsoft">Qur&apos;an 65:3</span>
+          <span className="text-app-gold">ⓘ Sources</span>
+        </div>
 
-        <p className="mt-7 text-[14px] leading-[1.7] text-bone-dim">
-          Notice it is said twice. Not to convince you — but because on the
-          hardest days, once is easy to miss. The ease is not somewhere else.
-          It is folded into the same hour as the weight.
+        <div className="mt-4 h-px bg-app-hair" />
+
+        <p className="mt-4 text-[12.5px] leading-[1.6] text-app-plumsoft">
+          Uncertainty about the future — work, money, a decision — can be
+          exhausting. There is relief in doing your part and letting go of what
+          was never yours to control.
         </p>
-      </div>
 
-      <div className="mt-8 flex items-center gap-6 text-bone-faint">
-        <span className="text-[13px]">♡ Save</span>
-        <span className="text-[13px]">✎ Journal</span>
-        <span className="text-[13px]">↻ Flip for Arabic</span>
+        <p className="mt-5 text-[10px] font-semibold uppercase tracking-[0.16em] text-app-plumsoft">
+          Carry this today
+        </p>
+        <p className="mt-1.5 font-serif text-[14px] italic leading-[1.55] text-app-plum">
+          What is one outcome you can do your best on, then release?
+        </p>
+
+        <div className="mt-5 flex items-center gap-6 border-t border-app-hair pt-4 text-[12px] text-app-plumsoft">
+          <span>♡ Save</span>
+          <span>↗ Share</span>
+          <span>✎ Journal</span>
+        </div>
       </div>
     </div>
   );

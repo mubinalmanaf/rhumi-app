@@ -1,38 +1,37 @@
 /**
- * Faithful mockup of Rhumi's mood check-in — the gentle, human "how are you
- * carrying today?" moment that shapes the day's reflection.
+ * Faithful mockup of Rhumi's mood check-in (light theme) — the mandatory,
+ * warm "How are you arriving?" flow. Copy + moods from
+ * src/features/moods/{MoodCheckInModal,moodPrompts}.ts and content/taxonomy.yaml.
  */
 const MOODS = [
-  { label: "Tired", active: true },
-  { label: "Grateful", active: false },
-  { label: "Anxious", active: false },
+  { label: "Anxious", active: true },
+  { label: "Tired", active: false },
+  { label: "Lonely", active: false },
+  { label: "Stressed", active: false },
   { label: "Hopeful", active: false },
-  { label: "Heavy", active: false },
-  { label: "Still", active: false },
+  { label: "Grateful", active: false },
+  { label: "Motivated", active: false },
 ];
 
 export default function MoodCheckIn() {
   return (
-    <div className="flex h-full flex-col bg-[#14121C] px-6 pb-8 pt-14 text-bone">
-      <span className="text-[11px] uppercase tracking-[0.22em] text-bone-faint">
-        Before we begin
+    <div className="flex h-full flex-col bg-app-cream px-5 pb-6 pt-14 text-app-plum">
+      <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-app-plumsoft">
+        Check in
       </span>
 
-      <p className="mt-6 font-serif text-[24px] font-light leading-[1.3] text-bone">
-        How are you carrying today?
-      </p>
-      <p className="mt-3 text-[13px] leading-[1.6] text-bone-faint">
-        No wrong answer. Whatever you name, that&apos;s where we&apos;ll begin.
+      <p className="mt-4 font-sans text-[19px] font-semibold leading-[1.25] text-app-plum">
+        How are you arriving this morning?
       </p>
 
-      <div className="mt-8 flex flex-wrap gap-2.5">
+      <div className="mt-5 flex flex-wrap gap-2">
         {MOODS.map((m) => (
           <span
             key={m.label}
-            className={`rounded-full border px-4 py-2 text-[13px] ${
+            className={`rounded-full px-3.5 py-2 text-[12px] ${
               m.active
-                ? "border-dawn-amber/70 bg-dawn-amber/15 text-bone"
-                : "border-bone/15 text-bone-dim"
+                ? "border border-app-gold bg-app-goldsoft font-semibold text-app-gold"
+                : "border border-transparent bg-app-subtle text-app-plum"
             }`}
           >
             {m.label}
@@ -40,11 +39,20 @@ export default function MoodCheckIn() {
         ))}
       </div>
 
-      <div className="mt-auto rounded-2xl bg-white/[0.04] p-4">
-        <p className="text-[13px] leading-[1.6] text-bone-dim">
-          <span className="text-bone">Tired is honest.</span> Which kind — the
-          body&apos;s tired, the mind&apos;s, or the heart&apos;s?
+      <div className="mt-5 rounded-[18px] bg-app-subtle p-4">
+        <p className="text-[12.5px] leading-[1.6] text-app-plum">
+          Anxiety is often the heart trying to hold tomorrow before it arrives.
+          Just naming it, like you did, is already a kind of relief. 🌙
         </p>
+      </div>
+
+      <div className="mt-auto flex flex-col gap-2.5 pt-5">
+        <span className="rounded-xl bg-app-gold py-3 text-center text-[13px] font-semibold text-app-card">
+          See my reflection
+        </span>
+        <span className="rounded-xl bg-app-subtle py-3 text-center text-[13px] font-medium text-app-plum">
+          Write about it
+        </span>
       </div>
     </div>
   );

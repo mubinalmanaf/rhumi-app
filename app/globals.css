@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #0b0b10;
+  --bone: #f4efe6;
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: var(--ink);
+  color: var(--bone);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  /* The sky is a fixed layer behind everything; body stays transparent. */
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(232, 178, 125, 0.28); /* dawn amber */
+  color: #fff;
+}
+
+/* Focus visibility — calm but unmistakable */
+:focus-visible {
+  outline: 2px solid rgba(232, 178, 125, 0.8);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@layer components {
+  .eyebrow {
+    @apply text-xs uppercase tracking-eyebrow text-bone-faint font-sans;
+  }
+
+  /* Fine film grain to keep the gradients from banding and add quiet texture */
+  .grain::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+/* Hairline dividers, used sparingly */
+.hairline {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(244, 239, 230, 0.14),
+    transparent
+  );
+}

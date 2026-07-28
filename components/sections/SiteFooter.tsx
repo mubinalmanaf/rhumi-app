@@ -30,7 +30,7 @@ export default function SiteFooter() {
               Privacy
             </a>
             <a
-              href="mailto:hello@rhumi.app"
+              href="mailto:admin@rhumi.app"
               className="transition-colors hover:text-bone"
             >
               Contact

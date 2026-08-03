@@ -30,6 +30,12 @@ export default function SiteFooter() {
               Privacy
             </a>
             <a
+              href="/terms.html"
+              className="transition-colors hover:text-bone"
+            >
+              Terms
+            </a>
+            <a
               href="mailto:hello@rhumi.app"
               className="transition-colors hover:text-bone"
             >
